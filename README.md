@@ -1,31 +1,32 @@
-# CSPA Age Calculator — put it online with GitHub Pages
+# CSPA Age Calculator — a public link for visitors, via GitHub Pages
 
-Free hosting, no coding, done entirely in the browser. About 5 minutes.
+Free hosting, no coding. A GitHub Actions workflow
+(`.github/workflows/deploy-pages.yml`) builds and publishes the public link
+automatically every time `main` changes — there's nothing to re-upload by hand.
 
 ## One-time setup
 
 1. **Create a GitHub account** at github.com (free) if you don't have one.
-2. Click **+** (top right) → **New repository**.
-   - Repository name: `cspa-calculator`
-   - Visibility: **Public** (required for free Pages hosting)
-   - Click **Create repository**.
-3. On the new empty repository page, click the **"uploading an existing file"** link.
-4. Drag in these three files: `index.html`, `app.js`, `README.md`.
-5. Click **Commit changes**.
-6. Go to **Settings** (tab at the top of the repo) → **Pages** (left sidebar).
-7. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-   Branch: **main**, folder: **/ (root)**. Click **Save**.
-8. Wait about a minute, then refresh the Pages screen. Your live link appears at the top:
+2. Push (or upload) this repository's files — `index.html`, `app.js`, `README.md`,
+   and the `.github/workflows/deploy-pages.yml` workflow — to a **public** repository
+   on GitHub (required for free Pages hosting).
+3. Go to **Settings** (tab at the top of the repo) → **Pages** (left sidebar).
+4. Under **Build and deployment → Source**, choose **GitHub Actions**.
+5. Go to the **Actions** tab and confirm the "Deploy public visitor link (GitHub Pages)"
+   workflow has run (it runs automatically on every push to `main`, or trigger it
+   manually with **Run workflow**).
+6. Once it finishes, your live link appears on the **Settings → Pages** screen:
 
-   `https://YOUR-USERNAME.github.io/cspa-calculator/`
+   `https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/`
 
-9. Open it once to confirm it works, then paste that link into your WhatsApp group.
+7. Open it once to confirm it works, then paste that link into your WhatsApp group.
 
 ## Updating later
 
-If the calculator is revised (for example after a USCIS policy change), just upload the new
-`app.js` the same way (Add file → Upload files → commit). The link stays the same — everyone
-in the group automatically gets the new version.
+If the calculator is revised (for example after a USCIS policy change), just push the
+updated `app.js` to `main`. The workflow rebuilds and republishes automatically — the
+link stays the same, and everyone in the group gets the new version within a minute or
+two.
 
 ## What's different from the Claude version
 
